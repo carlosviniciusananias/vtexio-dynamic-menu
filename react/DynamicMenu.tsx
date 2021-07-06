@@ -16,7 +16,6 @@ const DynamicMenu: StorefrontFunctionComponent = () => {
         return response.data
       })
       .then(data => {
-        console.log('data', data)
         setCategories(data)
 
         setLoading(true)
@@ -32,7 +31,7 @@ const DynamicMenu: StorefrontFunctionComponent = () => {
     return (
       <Fragment>
         {categories.map((category: Category) => {
-          return <CategoryItem id={category.id} title={category.title} url={category.url} name={category.name} />
+          return <CategoryItem key={category.id} id={category.id} title={category.title} url={category.url} name={category.name} />
         })}
       </Fragment>
     )
